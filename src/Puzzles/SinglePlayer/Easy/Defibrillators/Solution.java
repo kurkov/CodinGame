@@ -36,7 +36,7 @@ class Solution {
         // Write an action using System.out.println()
         // To debug: System.err.println("Debug messages...");
 
-        String closestDefib = defibrillators.get(0).id;
+        int closestDefib = 0;
         double minDistance = Double.MAX_VALUE;
 
         for (int i = 0; i < defibrillators.size(); i++) {
@@ -44,11 +44,11 @@ class Solution {
                     defibrillators.get(i).longitude, defibrillators.get(i).latitude);
             if (distance < minDistance) {
                 minDistance = distance;
-                closestDefib = defibrillators.get(0).id;
+                closestDefib = i;
             }
         }
 
-        System.out.println(defibrillators.get(Integer.parseInt(closestDefib)).name);
+        System.out.println(defibrillators.get(closestDefib).name);
 
     }
 
